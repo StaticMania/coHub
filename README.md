@@ -1,2 +1,2 @@
-# Roxo HTML
-Roxo HMTL Theme Development Structure
+# STACK HTML
+ STACK HMTL Theme Development Structure
