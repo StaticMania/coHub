@@ -3,6 +3,14 @@
         background: #191717bf;
         padding: 100px;
 
+        @include mobile-xs {
+            padding: 50px;
+        }
+
+        @include desktop {
+            text-align: center;
+        }
+
         h3 {
             font-size: 25px;
             line-height: 38px;
@@ -34,10 +42,20 @@
             font-weight: 400;
             line-height: 32px;
             margin-bottom: 20px;
+
+            @include desktop {
+                width: 80%;
+                margin: 0 auto;
+                padding-bottom: 20px;
+            }
         }
     }
 
     #map {
         height: 100%;
+
+        @include desktop {
+            height: 500px;
+        }
     }
 }

@@ -21,6 +21,10 @@
         font-family: 'Open Sans', sans-serif;
       }
     }
+
+    @include desktop {
+      align-items: center;
+    }
   }
 
   .navbar-brand {
@@ -35,6 +39,9 @@
     display: flex;
     align-items: center;
 
+    @include desktop {
+      justify-content: center;
+    }
 
     li {
       a {

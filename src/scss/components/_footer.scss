@@ -1,11 +1,23 @@
 .footer {
     padding: 100px 0;
 
+    @include desktop {
+        padding: 50px 0;
+    }
+
     &-menu {
         display: flex;
         align-items: center;
         justify-content: start;
         padding-bottom: 20px;
+
+        @include tablet {
+            justify-content: center;
+        }
+
+        @include desktop {
+            padding-bottom: 10px;
+        }
 
         img {
             width: 15%;
@@ -18,10 +30,10 @@
             li {
                 list-style: none;
                 display: inline-block;
-                padding: 0 50px;
+                padding-left: 50px;
 
-                &:last-child {
-                    padding-left: 0;
+                @include desktop {
+                    padding-left: 30px;
                 }
 
                 a {
@@ -39,6 +51,10 @@
     }
 
     &-text-block {
+        @include tablet {
+            text-align: center;
+        }
+
         p {
             font-size: 0.85714286em;
             color: #666666;
@@ -49,6 +65,17 @@
     &-icon {
         display: flex;
         justify-content: flex-end;
+        padding-bottom: 20px;
+
+        @include tablet {
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        @include desktop {
+            padding-bottom: 10px;
+        }
+
 
         ul {
             padding: 0;
@@ -56,10 +83,10 @@
 
             li {
                 list-style: none;
-                padding: 0 15px;
+                padding-left: 15px;
                 display: inline-block;
 
-                &:last-child {
+                &:first-child {
                     padding-right: 0;
                 }
 
@@ -80,7 +107,10 @@
         display: flex;
         justify-content: flex-end;
         opacity: .5;
-        padding-top: 20px;
+
+        @include tablet {
+            justify-content: center;
+        }
 
         p {
             font-size: 12px;

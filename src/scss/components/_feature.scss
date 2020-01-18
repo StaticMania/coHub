@@ -10,6 +10,10 @@
         padding: 50px 70px 40px;
         border-radius: 6px;
 
+        @include desktop {
+            text-align: center;
+        }
+
         h3 {
             font-weight: 300;
             font-size: 25px;
@@ -36,6 +40,11 @@
             background: #00e6fd;
             left: 0;
             top: 100%;
+
+            @include desktop {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     }
 }

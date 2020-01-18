@@ -1,6 +1,4 @@
 .about {
-    padding: 0 0 100px;
-
     .gallery {
         opacity: 1;
         transition: all .5s ease-in-out;
@@ -8,18 +6,18 @@
         img {
             max-width: 100%;
         }
+
+        &:first-child {
+            margin-bottom: 30px;
+        }
     }
 
     .gallery:hover {
         opacity: .7;
     }
 
-    .images-gallery {
-        margin-bottom: 90px;
-    }
-
     &-button-platform {
-        margin: 45px 0 0;
+        padding-bottom: 20px;
 
         a {
             background: $primary-color;
@@ -42,23 +40,10 @@
                 right: -20px;
             }
         }
-    }
 
-    .section-title {
-        p {
-            margin-top: 20px;
+        &-pragrap {
             font-size: 12px;
-            width: 70%;
-            margin: 0 auto;
-            font-weight: 400;
-            color: #666666;
-            margin-top: 30px;
-
-            a {
-                text-decoration: underline;
-            }
         }
     }
-
 
 }

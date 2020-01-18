@@ -1,13 +1,6 @@
 .pricing {
     padding: 0 0 100px;
 
-    .section-title {
-        p {
-            width: 53%;
-            margin: 0 auto;
-        }
-    }
-
     &-item {
 
         background: $white;
@@ -55,6 +48,10 @@
         padding: 15px;
         font-weight: 500;
         transition: all .3s ease-in-out;
+
+        @include desktop {
+            margin-bottom: 20px;
+        }
 
         &:hover {
             transform: rotateY(0);

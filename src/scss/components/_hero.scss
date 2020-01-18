@@ -5,6 +5,10 @@
     background-size: cover;
     background-image: linear-gradient(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.26)), url(../images/hero/hero-bg.jpg);
 
+    @include tablet {
+        padding: 100px 0;
+    }
+
     &-content {
         text-align: center;
 
@@ -12,6 +16,10 @@
             color: $white;
             font-weight: 300;
             margin-bottom: 25px;
+
+            @include tablet {
+                font-size: 40px;
+            }
         }
 
         p {
@@ -21,6 +29,10 @@
             line-height: 32px;
             width: 83%;
             margin: 0 auto;
+
+            @include desktop {
+                width: 100%;
+            }
         }
     }
 
@@ -29,15 +41,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+
+        @include desktop {
+            margin-top: 60px;
+        }
 
         .hero-video-player-icon {
-            background: $white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             a {
+                position: absolute;
+                background: $white;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
                 color: $black;
 
                 i {
@@ -51,7 +71,7 @@
         }
 
         span {
-            margin-left: 20px;
+            margin-left: 50px;
             color: $white;
         }
     }

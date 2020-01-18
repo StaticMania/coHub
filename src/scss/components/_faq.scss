@@ -7,14 +7,37 @@
         h3 {
             font-size: 19px;
             margin: 60px 0 20px;
+
+            @include tablet {
+                margin-bottom: 40px;
+                font-size: 19px;
+            }
+
+            @include desktop {
+                font-size: 15px;
+                margin-top: 0;
+            }
         }
     }
 
     &-content {
+        @include mobile {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include tablet {
+            text-align: center;
+        }
+
         h3 {
             font-weight: 500;
             font-size: 14px;
             margin: 60px 0 20px;
+
+            @include desktop {
+                margin-top: 0;
+            }
         }
 
         p {
