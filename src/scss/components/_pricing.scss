@@ -1,0 +1,63 @@
+.pricing {
+    padding: 0 0 100px;
+
+    .section-title {
+        p {
+            width: 53%;
+            margin: 0 auto;
+        }
+    }
+
+    &-item {
+
+        background: $white;
+        padding: 50px 10px 50px;
+        text-align: center;
+        border: 1px solid #0000001c;
+        border-radius: 6px 6px 0 0;
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        span {
+            font-size: 70px;
+            font-weight: 400;
+            color: #000;
+
+            .pricing-dollar {
+                position: relative;
+                bottom: 20px;
+                font-size: 40px;
+                left: 20px;
+                position: relative;
+                bottom: 20px;
+                font-size: 40px;
+                left: 20px;
+                font-weight: 300;
+            }
+        }
+
+        p {
+            margin-top: 20px;
+            color: #666666;
+            font-size: 14px;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    a {
+        border: none;
+        width: 100%;
+        border-radius: 0px 0px 6px 6px;
+        font-size: 13px;
+        padding: 15px;
+        font-weight: 500;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: rotateY(0);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.btn-primary {
+  background: $primary-color;
+  color: $white;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    transform: translateY(-3px);
+    opacity: .6;
+
+  }
+}

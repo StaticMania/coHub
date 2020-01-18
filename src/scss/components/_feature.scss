@@ -1,0 +1,41 @@
+.feature {
+    padding: 100px 0;
+    background: url(../../images/feature/featuer-img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &-content {
+        background: $white;
+        padding: 50px 70px 40px;
+        border-radius: 6px;
+
+        h3 {
+            font-weight: 300;
+            font-size: 25px;
+            margin-bottom: 35px;
+        }
+
+        p {
+            color: #666666;
+        }
+    }
+
+    &-paragrap {
+        position: relative;
+        font-size: 19px;
+        line-height: 32px;
+        color: #666666;
+        padding-bottom: 20px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 1px;
+            background: #00e6fd;
+            left: 0;
+            top: 100%;
+        }
+    }
+}

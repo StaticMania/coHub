@@ -1,0 +1,58 @@
+.hero {
+    padding: 150px 0;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.26)), url(../images/hero/hero-bg.jpg);
+
+    &-content {
+        text-align: center;
+
+        h1 {
+            color: $white;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        p {
+            color: $white;
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 32px;
+            width: 83%;
+            margin: 0 auto;
+        }
+    }
+
+    &-video-player {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .hero-video-player-icon {
+            background: $white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: relative;
+
+            a {
+                color: $black;
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                }
+            }
+        }
+
+        span {
+            margin-left: 20px;
+            color: $white;
+        }
+    }
+}

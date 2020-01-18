@@ -1,0 +1,43 @@
+.contact {
+    &-aria {
+        background: #191717bf;
+        padding: 100px;
+
+        h3 {
+            font-size: 25px;
+            line-height: 38px;
+            font-weight: 300;
+            color: $white;
+
+        }
+
+        ul {
+            padding: 0;
+            margin: 30px 0;
+
+            li {
+                list-style: none;
+
+                a {
+                    color: $white;
+                    line-height: 32px;
+                    font-size: 19px;
+                    font-weight: 400;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        p {
+            font-size: 19px;
+            color: $white;
+            font-weight: 400;
+            line-height: 32px;
+            margin-bottom: 20px;
+        }
+    }
+
+    #map {
+        height: 100%;
+    }
+}

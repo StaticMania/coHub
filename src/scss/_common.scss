@@ -1,0 +1,36 @@
+.section {
+  &-title {
+    margin-top: 115px;
+    text-align: center;
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 33px;
+      color: #252525;
+      margin-bottom: 30px;
+    }
+
+    p {
+      width: 60%;
+      margin: 0 auto;
+      font-size: 19px;
+    }
+  }
+}
+
+.ml-25 {
+  margin-left: 25px;
+}
+
+.mr-25 {
+  margin-right: 25px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.active {
+  background: none;
+  border-radius: 6px;
+}
