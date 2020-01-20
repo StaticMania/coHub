@@ -1,0 +1,43 @@
+.blog {
+    padding: 100px 0;
+    border-top: 1px solid #ececec;
+    text-align: center;
+
+    &-content {
+        margin-bottom: 30px;
+
+        img {
+            max-width: 100%;
+            border-radius: 5px 5px 0 0;
+        }
+
+        &-text-blog {
+            padding: 30px 20px;
+            border-left: 1px solid #ececec;
+            border-right: 1px solid #ececec;
+            border-bottom: 1px solid #ececec;
+            border-radius: 0px 5px 5px 5px;
+
+            h3 {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            a {
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+
+    }
+
+    a {
+        margin: 0 auto;
+        text-align: center;
+        text-transform: capitalize;
+
+        &:hover {
+            transform: rotateY(0);
+        }
+    }
+}

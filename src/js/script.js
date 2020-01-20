@@ -63,78 +63,7 @@ $(document).ready(function () {
   //   byRow: 0
   // });
 
-  // Testimonial Slider
-  $('.testimonial-slider').slick({
-    infinite: true,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    dots: true,
-    arrows: false,
-    centerMode: true,
-    centerPadding: '0px',
-    autoplay: true,
-    speed: 500,
 
-    // responsive: [
-    //   {
-    //     breakpoint: 992,
-    //     settings: {
-    //         slidesToShow: 2,
-    //         slidesToScroll: 1,
-    //         dots: true,
-    //         centerMode: false,
-    //         autoplay: false,
-    //         infinite: false
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 768,
-    //       settings: {
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1,
-    //         dots: true,
-    //         autoplay: false,
-    //         infinite: false
-    //     }
-    //   }
-    // ]
-  });
-  // client Slider
-  $('.client-slider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    arrows: false,
-    centerMode: true,
-    centerPadding: '0px',
-    autoplay: true,
-    speed: 500,
-
-    // responsive: [
-    //   {
-    //     breakpoint: 992,
-    //     settings: {
-    //         slidesToShow: 2,
-    //         slidesToScroll: 1,
-    //         dots: true,
-    //         centerMode: false,
-    //         autoplay: false,
-    //         infinite: false
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 768,
-    //       settings: {
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1,
-    //         dots: true,
-    //         autoplay: false,
-    //         infinite: false
-    //     }
-    //   }
-    // ]
-  });
   // AOS initialize
   AOS.init({
     disable: 'mobile'
