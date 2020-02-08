@@ -51,16 +51,33 @@
         }
 
     }
-
-    // a {
-    //     margin: 0 auto;
-    //     text-align: center;
-    //     text-transform: capitalize;
-
-    //     &:hover {
-    //         transform: rotateY(0);
-    //     }
-    // }
+    &-pagination{
+        margin-top: 40px;
+        .pagination{
+            justify-content: center;
+          .page-item{
+            &:not(:last-child){
+              margin-right: 10px;
+            }
+            .page-link{
+              font-size: 18px;
+              border-radius: 5px;
+              border: none;
+              padding: 12px 20px;
+              color: $text-color-dark;
+              font-weight: 300;
+              transition: all 0.3s ease;
+              font-family: $primary-font;
+            }
+            &.active{
+              .page-link{
+                background-color: $primary-color;
+                color: $white;
+              }
+            }
+          }
+        }
+    }
 }
 
 .post {

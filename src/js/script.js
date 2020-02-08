@@ -62,8 +62,8 @@ $(document).ready(function () {
 // Add nav bg
 $(window).on('scroll', function () {
   if ($(window).scrollTop()) {
-    $('nav').addClass('nav-bg');
+    $('.main-nav').addClass('nav-bg');
   } else {
-    $('nav').removeClass('nav-bg');
+    $('.main-nav').removeClass('nav-bg');
   }
 })
