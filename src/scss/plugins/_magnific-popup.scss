@@ -448,3 +448,23 @@ screen and (max-height: 300px) {
         padding-right: 6px;
     }
 }
+
+.mfp-iframe-holder .mfp-close{
+    font-family: $primary-font;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+button.mfp-close{
+    font-family: $primary-font;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+.mfp-zoom-out-cur{
+    cursor: url(../images/minus.png), auto;
+}
+
+.mfp-title, .mfp-counter{
+    font-family: $primary-font;
+}

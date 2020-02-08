@@ -2,7 +2,7 @@
 
 @import "mixins";
 
-@import 'plugins/font-awesome.min';
+@import 'plugins/themify';
 
 @import 'plugins/slick';
 
@@ -14,13 +14,15 @@
 
 @import "common";
 
-@import "components/about";
+@import "components/gallery";
+
+@import "components/cta";
 
 @import "components/service";
 
 @import "components/blog";
 
-@import "components/feature";
+@import "components/testimonial";
 
 @import "components/pricing";
 

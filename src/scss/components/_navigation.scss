@@ -12,13 +12,13 @@
         color: $white;
         padding-left: 20px;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 14px;
         padding-right: 20px;
         letter-spacing: 1px;
         position: relative;
+        font-family: $primary-font;
         z-index: 1;
         transition: all .5s ease-in-out;
-        font-family: 'Open Sans', sans-serif;
       }
     }
 
@@ -28,30 +28,14 @@
   }
 
   .navbar-brand {
+    .logo-main{
+      display: none;
+    }
+    .logo-white{
+      display: block;
+    }
     img {
       width: 100px;
-
-    }
-  }
-
-  .account-list {
-    margin-left: 30px;
-    display: flex;
-    align-items: center;
-
-    @include desktop {
-      justify-content: center;
-    }
-
-    li {
-      a {
-        color: $white;
-        font-weight: 500;
-        font-size: 16px;
-        padding: 10px 35px;
-        opacity: .9;
-
-      }
     }
   }
 

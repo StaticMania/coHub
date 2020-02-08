@@ -1,20 +1,23 @@
-.about {
-    .gallery {
+.gallery {
+    padding: 100px 0;
+    &-item {
         opacity: 1;
-        transition: all .5s ease-in-out;
-
+        transition: all .5s $site-ease;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
+        a{
+            cursor: url(../images/plus.png), auto;
+        }
         img {
             max-width: 100%;
         }
-
-        &:first-child {
-            margin-bottom: 30px;
+        &:hover {
+            transform: scale(1.02);
         }
     }
 
-    .gallery:hover {
-        opacity: .7;
-    }
 
     &-button-platform {
         padding-bottom: 20px;

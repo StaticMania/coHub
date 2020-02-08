@@ -1,6 +1,6 @@
 .contact {
     &-aria {
-        background: #191717bf;
+        background: #222029;
         padding: 100px;
 
         @include mobile-xs {
@@ -25,21 +25,20 @@
 
             li {
                 list-style: none;
-
                 a {
                     color: $white;
                     line-height: 32px;
                     font-size: 19px;
                     font-weight: 400;
                     text-decoration: underline;
+                    font-family: $primary-font;
                 }
             }
         }
 
         p {
-            font-size: 19px;
             color: $white;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 32px;
             margin-bottom: 20px;
 

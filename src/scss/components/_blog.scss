@@ -1,8 +1,4 @@
 .blog {
-    padding: 100px 0;
-    border-top: 1px solid #ececec;
-    text-align: center;
-
     &-content {
         margin-bottom: 30px;
 
@@ -16,7 +12,7 @@
             }
         }
 
-        &-text-blog {
+        &-text {
             padding: 30px 20px;
             border-left: 1px solid #ececec;
             border-right: 1px solid #ececec;
@@ -24,27 +20,47 @@
             border-radius: 0px 5px 5px 5px;
 
             h3 {
-                font-size: 1rem;
+                a{
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: $text-color-dark;
+                    text-transform: capitalize;
+                    &:hover{
+                        text-decoration: none;
+                        color: $primary-color;
+                    }
+                }
                 font-weight: 500;
             }
 
-            a {
+            a.more {
                 font-size: 14px;
-                font-weight: 600;
+                font-weight: 400;
+                font-family: $primary-font;
+                text-transform: lowercase;
+                transition: 0.3s $site-ease;
+                span{
+                    display: inline-block;
+                    margin-left: 5px;
+                }
+                &:hover{
+                    text-decoration: none;
+                    letter-spacing: 1px;
+                }
             }
         }
 
     }
 
-    a {
-        margin: 0 auto;
-        text-align: center;
-        text-transform: capitalize;
+    // a {
+    //     margin: 0 auto;
+    //     text-align: center;
+    //     text-transform: capitalize;
 
-        &:hover {
-            transform: rotateY(0);
-        }
-    }
+    //     &:hover {
+    //         transform: rotateY(0);
+    //     }
+    // }
 }
 
 .post {
