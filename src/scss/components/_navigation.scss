@@ -5,7 +5,6 @@
   z-index: 99;
   top: 0;
   width: 100%;
-
   .navbar-nav {
     .nav-item {
       .nav-link {
@@ -123,5 +122,10 @@
         }
       }
     }
+  }
+
+  &-colored{
+    @extend .nav-bg;
+    box-shadow: none;
   }
 }

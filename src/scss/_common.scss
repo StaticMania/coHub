@@ -1,11 +1,12 @@
 .section {
   padding: 100px 0;
+
   &-title {
     text-align: center;
     margin-bottom: 100px;
     position: relative;
 
-    &::before{
+    &::before {
       content: '';
       position: absolute;
       width: 100px;
@@ -16,6 +17,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
     h2 {
       font-size: 40px;
       color: #252525;
@@ -48,7 +50,8 @@
     }
   }
 }
-.section-grey{
+
+.section-grey {
   background: #F7F8FC;
 }
 
@@ -68,7 +71,26 @@
   }
 }
 
-.active {
-  background: none;
-  border-radius: 6px;
+.page-title {
+  padding: 200px 0 50px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+  .breadcrumb {
+    padding: 0;
+    background: transparent;
+    justify-content: center;
+  }
+
+  .breadcrumb-item {
+    font-family: $primary-font;
+
+    a {
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
 }
