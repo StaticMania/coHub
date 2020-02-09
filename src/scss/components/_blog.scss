@@ -19,17 +19,31 @@
             border-bottom: 1px solid #ececec;
             border-radius: 0px 5px 5px 5px;
 
+            @include desktop {
+                text-align: center;
+            }
+
             h3 {
-                a{
+                @include mobile-xs {
+                    margin-top: 20px;
+                }
+
+                a {
                     font-size: 18px;
                     line-height: 26px;
                     color: $text-color-dark;
                     text-transform: capitalize;
-                    &:hover{
+
+                    @include mobile-xs {
+                        font-size: 15px;
+                    }
+
+                    &:hover {
                         text-decoration: none;
                         color: $primary-color;
                     }
                 }
+
                 font-weight: 500;
             }
 
@@ -39,11 +53,13 @@
                 font-family: $primary-font;
                 text-transform: lowercase;
                 transition: 0.3s $site-ease;
-                span{
+
+                span {
                     display: inline-block;
                     margin-left: 5px;
                 }
-                &:hover{
+
+                &:hover {
                     text-decoration: none;
                     letter-spacing: 1px;
                 }
@@ -52,20 +68,16 @@
 
     }
 
-    // a {
-    //     margin: 0 auto;
-    //     text-align: center;
-    //     text-transform: capitalize;
-
-    //     &:hover {
-    //         transform: rotateY(0);
-    //     }
-    // }
 }
 
 .post {
     text-align: center;
-    padding: 200px 0;
+    padding-top: 150px;
+    padding-bottom: 90px;
+
+    @include mobile-xs {
+        padding-bottom: 50px;
+    }
 
     &-title {
         padding-bottom: 20px;
@@ -73,6 +85,10 @@
         h2 {
             font-size: 33px;
             line-height: 35px;
+
+            @include mobile-xs {
+                font-size: 25px;
+            }
         }
     }
 
@@ -99,11 +115,19 @@
         text-align: left;
         padding-top: 30px;
 
+        @include mobile-xs {
+            text-align: center;
+        }
+
         p {
             font-size: 22px;
             line-height: 32px;
             font-weight: 400;
             padding-bottom: 10px;
+
+            @include mobile-xs {
+                font-size: 15px;
+            }
         }
 
         h5 {
@@ -117,6 +141,10 @@
             text-align: center;
             width: 90%;
             margin: 40px auto;
+
+            @include mobile-xs {
+                font-size: 25px;
+            }
         }
     }
 
@@ -125,6 +153,10 @@
 
         li {
             font-size: 22px;
+
+            @include mobile-xs {
+                font-size: 18px;
+            }
 
             &:not(:last-child) {
                 margin-bottom: 10px;
