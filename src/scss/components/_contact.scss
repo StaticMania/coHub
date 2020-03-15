@@ -3,7 +3,7 @@
         background: #222029;
         padding: 100px;
 
-        @include mobile-xs {
+        @include mobile {
             padding: 50px;
         }
 
@@ -46,6 +46,10 @@
                 width: 80%;
                 margin: 0 auto;
                 padding-bottom: 20px;
+            }
+
+            @include mobile{
+                width: 100%;
             }
         }
     }

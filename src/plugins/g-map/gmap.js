@@ -171,8 +171,8 @@ function initialize() {
     map.mapTypes.set('grey', mapType);
     map.setMapTypeId('grey');
     //CREATE A CUSTOM PIN ICON
-    var marker_image = 'img/pin.png';
-    var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(21, 34));
+    var marker_image = 'images/pin.png';
+    var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(32, 32));
     marker = new google.maps.Marker({
         position: nottingham,
         map: map,

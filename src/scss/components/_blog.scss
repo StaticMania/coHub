@@ -1,64 +1,63 @@
 .blog {
-    &-content {
+    &-post{
         margin-bottom: 30px;
-
+    
         img {
             max-width: 100%;
             border-radius: 5px 5px 0 0;
             transition: all .3s ease-in-out;
-
+    
             &:hover {
                 opacity: .7;
             }
         }
+    }
+    &-content {
+        padding: 30px 20px;
+        border-left: 1px solid #ececec;
+        border-right: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        border-radius: 0px 5px 5px 5px;
 
-        &-text {
-            padding: 30px 20px;
-            border-left: 1px solid #ececec;
-            border-right: 1px solid #ececec;
-            border-bottom: 1px solid #ececec;
-            border-radius: 0px 5px 5px 5px;
-
-            h3 {
-                @include mobile-xs {
-                    margin-top: 20px;
-                }
-
-                a {
-                    font-size: 18px;
-                    line-height: 26px;
-                    color: $text-color-dark;
-                    text-transform: capitalize;
-
-                    @include mobile-xs {
-                        font-size: 15px;
-                    }
-
-                    &:hover {
-                        text-decoration: none;
-                        color: $primary-color;
-                    }
-                }
-
-                font-weight: 500;
+        h3 {
+            @include mobile-xs {
+                margin-top: 20px;
             }
 
-            a.more {
-                font-size: 14px;
-                font-weight: 400;
-                font-family: $primary-font;
-                text-transform: lowercase;
-                transition: 0.3s $site-ease;
+            a {
+                font-size: 18px;
+                line-height: 26px;
+                color: $text-color-dark;
+                text-transform: capitalize;
 
-                span {
-                    display: inline-block;
-                    margin-left: 5px;
+                @include mobile-xs {
+                    font-size: 15px;
                 }
 
                 &:hover {
                     text-decoration: none;
-                    letter-spacing: 1px;
+                    color: $primary-color;
                 }
+            }
+
+            font-weight: 500;
+        }
+
+        a.more {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: $primary-font;
+            text-transform: capitalize;
+            transition: 0.3s $site-ease;
+
+            span {
+                display: inline-block;
+                margin-left: 5px;
+            }
+
+            &:hover {
+                text-decoration: none;
+                letter-spacing: 1px;
             }
         }
 
@@ -119,12 +118,10 @@
         }
     }
 
-    &-metta {
+    &-meta {
         padding-bottom: 50px;
 
         p {
-            color: #666666;
-
             a {
                 text-decoration: underline;
             }
@@ -138,7 +135,7 @@
         }
     }
 
-    &-paragraph {
+    &-body {
         text-align: left;
         padding-top: 30px;
 
@@ -147,10 +144,8 @@
         }
 
         p {
-            font-size: 22px;
             line-height: 32px;
-            font-weight: 400;
-            padding-bottom: 10px;
+            margin-bottom: 30px;
 
             @include desktop {
                 text-align: center;
@@ -161,24 +156,27 @@
             }
         }
 
-        h5 {
-            padding: 20px 0;
-            font-size: 16px;
-            font-weight: 400;
-
-            @include desktop {
-                text-align: center;
-            }
-        }
-
         blockquote {
-            font-size: 30px;
-            text-align: center;
-            width: 90%;
-            margin: 40px auto;
+            font-size: 20px;
+            line-height: 30px;
+            color: $text-color-dark;
+            // width: 90%;
+            // margin: 40px auto;
+            margin-bottom: 40px;
+            font-family: $primary-font;
 
             @include mobile-xs {
                 font-size: 25px;
+            }
+        }
+        ul, ol{
+            margin: 0;
+            padding-left: 20px;
+            li{
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                font-weight: 300;
             }
         }
     }

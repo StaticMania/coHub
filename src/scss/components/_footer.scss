@@ -67,9 +67,8 @@
         }
 
         p {
-            font-size: 0.85714286em;
-            color: #666666;
             margin-bottom: 0;
+            font-family: $primary-font;
         }
     }
 
@@ -98,7 +97,7 @@
                 display: inline-block;
 
                 &:first-child {
-                    padding-right: 0;
+                    padding-left: 0;
                 }
 
                 a {

@@ -16,6 +16,9 @@ $(document).ready(function () {
       scrollTop: ($($anchor.attr('href')).offset().top - 50)
     }, 1000);
     event.preventDefault();
+    if (screen.width < 992) {
+      $('.navbar-toggler').click();
+    }
   });
 
   // AOS initialize
@@ -23,6 +26,11 @@ $(document).ready(function () {
     disable: 'mobile'
   });
 
+  // Service Item Match Height
+  $('.service-item').matchHeight({
+    byRow: 0
+  });
+  
   // Magnific Popup
   $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
     disableOn: 700,
