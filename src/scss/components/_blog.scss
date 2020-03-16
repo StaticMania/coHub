@@ -1,200 +1,182 @@
 .blog {
-    &-post{
-        margin-bottom: 30px;
-    
-        img {
-            max-width: 100%;
-            border-radius: 5px 5px 0 0;
-            transition: all .3s ease-in-out;
-    
-            &:hover {
-                opacity: .7;
-            }
-        }
+  &-post {
+    margin-bottom: 30px;
+    img {
+      max-width: 100%;
+      border-radius: 5px 5px 0 0;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
-    &-content {
-        padding: 30px 20px;
-        border-left: 1px solid #ececec;
-        border-right: 1px solid #ececec;
-        border-bottom: 1px solid #ececec;
-        border-radius: 0px 5px 5px 5px;
+  }
+  &-content {
+    padding: 30px 20px;
+    border-left: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    border-radius: 0px 5px 5px 5px;
 
-        h3 {
-            @include mobile-xs {
-                margin-top: 20px;
-            }
+    h3 {
+      @include mobile-xs {
+        margin-top: 20px;
+      }
 
-            a {
-                font-size: 18px;
-                line-height: 26px;
-                color: $text-color-dark;
-                text-transform: capitalize;
+      a {
+        font-size: 18px;
+        line-height: 26px;
+        color: $text-color-dark;
+        text-transform: capitalize;
 
-                @include mobile-xs {
-                    font-size: 15px;
-                }
-
-                &:hover {
-                    text-decoration: none;
-                    color: $primary-color;
-                }
-            }
-
-            font-weight: 500;
+        @include mobile-xs {
+          font-size: 15px;
         }
 
-        a.more {
-            font-size: 14px;
-            font-weight: 400;
-            font-family: $primary-font;
-            text-transform: capitalize;
-            transition: 0.3s $site-ease;
-
-            span {
-                display: inline-block;
-                margin-left: 5px;
-            }
-
-            &:hover {
-                text-decoration: none;
-                letter-spacing: 1px;
-            }
+        &:hover {
+          text-decoration: none;
+          color: $primary-color;
         }
+      }
 
+      font-weight: 500;
     }
 
-    &-pagination {
-        margin-top: 40px;
+    a.more {
+      font-size: 14px;
+      font-weight: 400;
+      font-family: $primary-font;
+      text-transform: capitalize;
+      transition: 0.3s $site-ease;
 
-        .pagination {
-            justify-content: center;
+      span {
+        display: inline-block;
+        margin-left: 5px;
+      }
 
-            .page-item {
-                &:not(:last-child) {
-                    margin-right: 10px;
-                }
-
-                .page-link {
-                    font-size: 18px;
-                    border-radius: 5px;
-                    border: none;
-                    padding: 12px 20px;
-                    color: $text-color-dark;
-                    font-weight: 300;
-                    transition: all 0.3s ease;
-                    font-family: $primary-font;
-                }
-
-                &.active {
-                    .page-link {
-                        background-color: $primary-color;
-                        color: $white;
-                    }
-                }
-            }
-        }
+      &:hover {
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
     }
+  }
+
+  &-pagination {
+    margin-top: 40px;
+
+    .pagination {
+      justify-content: center;
+
+      .page-item {
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        .page-link {
+          font-size: 18px;
+          border-radius: 5px;
+          border: none;
+          padding: 12px 20px;
+          color: $text-color-dark;
+          font-weight: 300;
+          transition: all 0.3s ease;
+          font-family: $primary-font;
+        }
+
+        &.active {
+          .page-link {
+            background-color: $primary-color;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
 }
 
 .post {
-    text-align: center;
-    padding-top: 150px;
-    padding-bottom: 90px;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 90px;
 
-    @include mobile-xs {
-        padding-bottom: 50px;
+  @include mobile-xs {
+    padding-bottom: 50px;
+  }
+
+  &-title {
+    padding-bottom: 20px;
+
+    h2 {
+      font-size: 33px;
+      line-height: 35px;
+
+      @include mobile-xs {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &-meta {
+    padding-bottom: 50px;
+
+    p {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-image {
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+  }
+
+  &-body {
+    text-align: left;
+    padding-top: 30px;
+    p {
+      line-height: 32px;
+      margin-bottom: 30px;
+      @include mobile-xs {
+        font-size: 15px;
+      }
     }
 
-    &-title {
-        padding-bottom: 20px;
-
-        h2 {
-            font-size: 33px;
-            line-height: 35px;
-
-            @include mobile-xs {
-                font-size: 25px;
-            }
-        }
+    blockquote {
+      font-size: 20px;
+      line-height: 30px;
+      color: $text-color-dark;
+      margin-bottom: 40px;
+      font-family: $primary-font;
+      @include mobile-xs {
+        font-size: 18px;
+      }
     }
-
-    &-meta {
-        padding-bottom: 50px;
-
-        p {
-            a {
-                text-decoration: underline;
-            }
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 20px;
+      li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
         }
+        font-weight: 300;
+      }
     }
+  }
 
-    &-image {
-        img {
-            max-width: 100%;
-            border-radius: 6px;
-        }
+  &-list {
+    text-align: left;
+    li {
+      font-size: 22px;
+      @include mobile-xs {
+        font-size: 18px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
     }
-
-    &-body {
-        text-align: left;
-        padding-top: 30px;
-
-        @include mobile-xs {
-            text-align: center;
-        }
-
-        p {
-            line-height: 32px;
-            margin-bottom: 30px;
-
-            @include desktop {
-                text-align: center;
-            }
-
-            @include mobile-xs {
-                font-size: 15px;
-            }
-        }
-
-        blockquote {
-            font-size: 20px;
-            line-height: 30px;
-            color: $text-color-dark;
-            // width: 90%;
-            // margin: 40px auto;
-            margin-bottom: 40px;
-            font-family: $primary-font;
-
-            @include mobile-xs {
-                font-size: 25px;
-            }
-        }
-        ul, ol{
-            margin: 0;
-            padding-left: 20px;
-            li{
-                &:not(:last-child){
-                    margin-bottom: 10px;
-                }
-                font-weight: 300;
-            }
-        }
-    }
-
-    &-list {
-        text-align: left;
-
-        li {
-            font-size: 22px;
-
-            @include mobile-xs {
-                font-size: 18px;
-            }
-
-            &:not(:last-child) {
-                margin-bottom: 10px;
-            }
-        }
-
-    }
+  }
 }
