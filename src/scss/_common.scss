@@ -1,5 +1,8 @@
 .section {
   padding: 100px 0;
+  @include desktop {
+    padding: 50px 0;
+  }
 
   &-title {
     text-align: center;
@@ -7,7 +10,7 @@
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100px;
       height: 5px;
@@ -52,7 +55,7 @@
 }
 
 .section-grey {
-  background: #F7F8FC;
+  background: #f7f8fc;
 }
 
 .ml-25 {
@@ -75,6 +78,9 @@
 .page-title {
   padding: 200px 0 50px;
   text-align: center;
+  @include desktop {
+    padding: 140px 0 50px;
+  }
 
   h1 {
     margin-bottom: 15px;

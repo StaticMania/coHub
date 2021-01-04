@@ -1,11 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
   "use strict";
 
   // Scroll to top
-  $("a[href='#top']").click(function() {
+  $("a[href='#top']").click(function () {
     $("html, body").animate(
       {
-        scrollTop: 0
+        scrollTop: 0,
       },
       "slow"
     );
@@ -13,13 +13,13 @@ $(document).ready(function() {
   });
 
   // Smooth scroll
-  $("a.scroll-to").on("click", function(event) {
+  $("a.scroll-to").on("click", function (event) {
     var $anchor = $(this);
     $("html, body")
       .stop()
       .animate(
         {
-          scrollTop: $($anchor.attr("href")).offset().top - 50
+          scrollTop: $($anchor.attr("href")).offset().top - 50,
         },
         1000
       );
@@ -31,14 +31,25 @@ $(document).ready(function() {
 
   // AOS initialize
   AOS.init({
-    disable: "mobile"
+    disable: "mobile",
   });
 
   // Service Item Match Height
   $(".service-item").matchHeight({
-    byRow: 0
+    byRow: 0,
   });
-
+  // .blog-content Match Height
+  $(".blog-content").matchHeight({
+    byRow: 0,
+  });
+  // if (window.innerWidth > 991) {
+  //   $(".blog-content").matchHeight({
+  //     byRow: 0,
+  //   });
+  //   $(".blog-content").matchHeight({
+  //     byRow: 0,
+  //   });
+  // }
   // Magnific Popup
   $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
     disableOn: 700,
@@ -46,7 +57,7 @@ $(document).ready(function() {
     mainClass: "mfp-fade",
     removalDelay: 160,
     preloader: false,
-    fixedContentPos: false
+    fixedContentPos: false,
   });
   // Magnific Gallery
   $(".gallery").magnificPopup({
@@ -57,30 +68,30 @@ $(document).ready(function() {
     mainClass: "mfp-with-zoom mfp-img-mobile",
     image: {
       verticalFit: true,
-      titleSrc: function(item) {
+      titleSrc: function (item) {
         return (
           item.el.attr("title") +
           ' &middot; <a class="image-source-link" href="' +
           item.el.attr("data-source") +
           '" target="_blank">image source</a>'
         );
-      }
+      },
     },
     gallery: {
-      enabled: true
+      enabled: true,
     },
     zoom: {
       enabled: true,
       duration: 300, // don't foget to change the duration also in CSS
-      opener: function(element) {
+      opener: function (element) {
         return element.find("img");
-      }
-    }
+      },
+    },
   });
 });
 
 // Add nav bg
-$(window).on("scroll", function() {
+$(window).on("scroll", function () {
   if ($(window).scrollTop()) {
     $(".main-nav").addClass("nav-bg");
   } else {
