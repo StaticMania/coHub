@@ -2,15 +2,15 @@
 
 @import "mixins";
 
-@import 'plugins/themify';
+@import "plugins/themify";
 
-@import 'plugins/slick';
+@import "plugins/slick";
 
-@import 'plugins/slick-theme';
+@import "plugins/slick-theme";
 
-@import 'plugins/aos';
+@import "plugins/aos";
 
-@import 'plugins/magnific-popup';
+@import "plugins/magnific-popup";
 
 @import "common";
 
@@ -27,6 +27,8 @@
 @import "components/pricing";
 
 @import "components/faq";
+
+@import "components/about";
 
 @import "components/contact";
 

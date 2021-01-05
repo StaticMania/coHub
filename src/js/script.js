@@ -42,15 +42,81 @@ $(document).ready(function () {
   $(".blog-content").matchHeight({
     byRow: 0,
   });
-  // if (window.innerWidth > 991) {
-  //   $(".blog-content").matchHeight({
-  //     byRow: 0,
-  //   });
-  //   $(".blog-content").matchHeight({
-  //     byRow: 0,
-  //   });
-  // }
-  // Magnific Popup
+  $(".story-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+  $(".quotes-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+  $(".clients-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
   $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
     disableOn: 700,
     type: "iframe",

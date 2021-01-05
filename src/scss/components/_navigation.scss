@@ -1,15 +1,15 @@
 .main-nav {
   padding: 30px 35px 20px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   position: fixed;
   z-index: 99;
   top: 0;
   width: 100%;
-  @include desktop{
+  @include desktop {
     background: $white;
     padding: 30px;
   }
-  @include mobile{
+  @include mobile {
     width: 95%;
     left: 50%;
     transform: translateX(-50%);
@@ -27,8 +27,8 @@
         position: relative;
         font-family: $primary-font;
         z-index: 1;
-        transition: all .5s ease-in-out;
-        @include desktop{
+        transition: all 0.5s ease-in-out;
+        @include desktop {
           color: $text-color-dark;
         }
       }
@@ -40,15 +40,15 @@
   }
 
   .navbar-brand {
-    .logo-main{
+    .logo-main {
       display: none;
-      @include desktop{
+      @include desktop {
         display: block;
       }
     }
-    .logo-white{
+    .logo-white {
       display: block;
-      @include desktop{
+      @include desktop {
         display: none;
       }
     }
@@ -65,7 +65,7 @@
       width: 25px;
       height: 2px;
       background: $secondary-color;
-      transition: all .2s;
+      transition: all 0.2s;
       display: block;
 
       &:not(:last-child) {
@@ -113,7 +113,6 @@
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
     top: 0;
 
-
     .navbar-brand {
       .logo-main {
         display: block;
@@ -141,13 +140,13 @@
         }
       }
     }
-    @include mobile{
+    @include mobile {
       top: 10px;
       padding: 25px;
     }
   }
 
-  &-colored{
+  &-colored {
     @extend .nav-bg;
     box-shadow: none;
   }
