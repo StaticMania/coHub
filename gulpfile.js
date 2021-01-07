@@ -30,12 +30,19 @@ var path = {
     js: "src/js/*.js",
     scss: "src/scss/**/*.scss",
     images: "src/images/**/*.+(png|jpg|gif|svg)",
-    blur: "src/images/**/*.jpg"
+    blur: "src/images/**/*.jpg",
   },
   build: {
     // build
-    dir: "dist/development/"
-  }
+    dir: "dist/development/",
+  },
+};
+
+var template = {
+  version: {
+    free: "free",
+    premium: "premium",
+  },
 };
 
 /* =====================================================
@@ -43,25 +50,28 @@ Development Builds
 ===================================================== */
 
 // HTML
-gulp.task("html:build", function() {
+gulp.task("html:build", function () {
   return gulp
     .src(path.src.html)
     .pipe(customPlumber("Error Running html-include"))
     .pipe(
       fileinclude({
-        basepath: path.src.incdir
+        basepath: path.src.incdir,
+        context: {
+          version: template.version.premium,
+        },
       })
     )
     .pipe(gulp.dest(path.build.dir))
     .pipe(
       bs.reload({
-        stream: true
+        stream: true,
       })
     );
 });
 
 // SCSS
-gulp.task("scss:build", function() {
+gulp.task("scss:build", function () {
   var ignoreNotification = false;
   return gulp
     .src(path.src.scss)
@@ -73,13 +83,13 @@ gulp.task("scss:build", function() {
     .pipe(gulp.dest(path.build.dir + "css/"))
     .pipe(
       bs.reload({
-        stream: true
+        stream: true,
       })
     );
 });
 
 // Javascript
-gulp.task("js:build", function() {
+gulp.task("js:build", function () {
   return (
     gulp
       .src(path.src.js)
@@ -96,62 +106,58 @@ gulp.task("js:build", function() {
       .pipe(gulp.dest(path.build.dir + "js/"))
       .pipe(
         bs.reload({
-          stream: true
+          stream: true,
         })
       )
   );
 });
 
 // Images
-gulp.task("images:build", function() {
+gulp.task("images:build", function () {
   return gulp
     .src(path.src.images)
     .pipe(gulp.dest(path.build.dir + "images/"))
     .pipe(
       bs.reload({
-        stream: true
+        stream: true,
       })
     );
 });
 
-// Plugins
-// gulp.task("plugins:build", function() {
-//   return gulp
-//     .src(path.src.plugins)
-//     .pipe(gulp.dest(path.build.dir + "plugins/"))
-//     .pipe(
-//       bs.reload({
-//         stream: true
-//       })
-//     );
-// });
-
-// Scss Build
-gulp.task("scss-f:build", function() {
+// Make Zip
+gulp.task("zip", function () {
   return gulp
-    .src(path.src.scss)
-    .pipe(gulp.dest(path.build.dir + "scss/"))
+    .src("dist/development/**/*")
+    .pipe(zip("theme-files.zip"))
+    .pipe(gulp.dest("dist/development"));
+});
+
+// Plugins
+gulp.task("plugins:build", function () {
+  return gulp
+    .src(path.src.plugins)
+    .pipe(gulp.dest(path.build.dir + "plugins/"))
     .pipe(
       bs.reload({
-        stream: true
+        stream: true,
       })
     );
 });
 
 // Fonts
-gulp.task("fonts:build", function() {
+gulp.task("fonts:build", function () {
   return gulp
     .src(path.src.fonts)
     .pipe(gulp.dest(path.build.dir + "fonts/"))
     .pipe(
       bs.reload({
-        stream: true
+        stream: true,
       })
     );
 });
 
 // Other files like favicon, php, apple-icon on root directory
-gulp.task("others:build", function() {
+gulp.task("others:build", function () {
   return gulp.src(path.src.others).pipe(gulp.dest(path.build.dir));
 });
 
@@ -162,48 +168,61 @@ function customPlumber(errTitle) {
       // Customizing error title
       title: errTitle || "Error running Gulp",
       message: "Error: <%= error.message %>",
-      sound: "Glass"
-    })
+      sound: "Glass",
+    }),
   });
 }
 
 // Clean Build Folder
-gulp.task("clean", function(cb) {
+gulp.task("clean", function (cb) {
   rimraf("./dist", cb);
 });
 
 // Watch Task
-gulp.task("watch:build", function() {
+gulp.task("watch:build", function () {
   gulp.watch(path.src.html, ["html:build"]);
   gulp.watch(path.src.htminc, ["html:build"]);
   gulp.watch(path.src.scss, ["scss:build"]);
   gulp.watch(path.src.js, ["js:build"]);
   gulp.watch(path.src.images, ["images:build"]);
-  gulp.watch(path.src.images, ["scss-f:build"]);
-  // gulp.watch(path.src.plugins, ["plugins:build"]);
+  gulp.watch(path.src.plugins, ["plugins:build"]);
   gulp.watch(path.src.fonts, ["fonts:build"]);
 });
 
 // Build Task
-gulp.task("build", function() {
+gulp.task("build", function () {
   runSequence(
     // "clean",
     "html:build",
     "js:build",
     "scss:build",
-    "scss-f:build",
     "images:build",
+    "plugins:build",
     "fonts:build",
     "others:build",
     "watch:build",
-    function() {
+    function () {
       bs.init({
         server: {
-          baseDir: path.build.dir
+          baseDir: path.build.dir,
         },
-        port: 3050
+        port: 3050,
       });
     }
+  );
+});
+
+gulp.task("build-prod", function () {
+  runSequence(
+    "clean",
+    "html:build",
+    "js:build",
+    "scss:build",
+    "images:build",
+    "plugins:build",
+    "fonts:build",
+    "others:build",
+    "zip"
   );
 });
 
