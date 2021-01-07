@@ -10,6 +10,7 @@
     padding: 30px;
   }
   @include mobile {
+    padding: 15px 30px;
     width: 95%;
     left: 50%;
     transform: translateX(-50%);
@@ -112,7 +113,10 @@
     border: none;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
     top: 0;
-
+    @include mobile {
+      top: 10px;
+      padding: 20px 20px;
+    }
     .navbar-brand {
       .logo-main {
         display: block;
@@ -139,10 +143,6 @@
           box-shadow: none;
         }
       }
-    }
-    @include mobile {
-      top: 10px;
-      padding: 25px;
     }
   }
 

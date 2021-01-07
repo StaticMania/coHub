@@ -143,6 +143,9 @@
 .privacy-policy {
   background-color: $border-color;
   padding: 150px 0;
+  @include mobile {
+    padding-bottom: 40px;
+  }
   &-content {
     padding: 50px;
     background-color: $white;

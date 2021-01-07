@@ -50,7 +50,7 @@ $(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 992,
@@ -75,7 +75,7 @@ $(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 992,
@@ -100,7 +100,7 @@ $(document).ready(function () {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 992,

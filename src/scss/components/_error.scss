@@ -90,6 +90,8 @@
           }
 
           a {
+            text-decoration: none;
+            font-size: 30px;
             i {
               color: $text-color;
             }
@@ -108,6 +110,7 @@
         font-weight: 600;
         text-decoration: none;
         text-transform: capitalize;
+        text-decoration: none;
 
         i {
           padding-right: 10px;
