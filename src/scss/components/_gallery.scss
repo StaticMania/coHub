@@ -1,5 +1,11 @@
 .gallery {
   padding: 100px 0;
+  @include desktop-lg {
+    padding: 70px 0 50px;
+  }
+  @include tablet {
+    padding: 50px 0 0;
+  }
   &-item {
     opacity: 1;
     transition: all 0.5s $site-ease;

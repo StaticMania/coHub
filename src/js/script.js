@@ -38,6 +38,7 @@ $(document).ready(function () {
   $(".service-item").matchHeight({
     byRow: 0,
   });
+
   // .blog-content Match Height
   $(".blog-content").matchHeight({
     byRow: 0,
@@ -49,7 +50,7 @@ $(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 992,
@@ -74,7 +75,7 @@ $(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 992,
@@ -99,7 +100,7 @@ $(document).ready(function () {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 992,

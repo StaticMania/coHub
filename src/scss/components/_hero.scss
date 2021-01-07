@@ -4,6 +4,15 @@
   background-position: center;
   background-size: cover;
   background-image: url(../images/hero/hero-bg.jpg);
+  @include desktop-lg {
+    padding: 150px 0 120px;
+  }
+  @include desktop {
+    padding: 200px 0 120px;
+  }
+  @include mobile {
+    padding: 200px 0 70px;
+  }
 
   &::after {
     content: "";
@@ -34,9 +43,13 @@
         font-size: 40px;
         line-height: 55px;
       }
+      @include mobile {
+        font-size: 30px;
+        line-height: 45px;
+      }
 
       @include mobile-xs {
-        font-size: 25px;
+        font-size: 24px;
         line-height: 40px;
       }
     }
@@ -51,6 +64,9 @@
       @include desktop {
         width: 100%;
       }
+      @include mobile {
+        margin: 0;
+      }
     }
   }
 
@@ -64,6 +80,9 @@
 
     @include desktop {
       margin-top: 60px;
+    }
+    @include mobile {
+      margin-top: 30px;
     }
     .hero-video-player-icon {
       display: flex;

@@ -1,4 +1,8 @@
 .cta {
+  padding-bottom: 50px;
+  @include tablet {
+    padding-bottom: 20px;
+  }
   &-content {
     text-align: center;
 
