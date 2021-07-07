@@ -1,6 +1,8 @@
 $(document).ready(function () {
   "use strict";
-
+  //Copyright Date
+  var newYear = document.getElementById("newYear");
+  newYear.innerHTML = new Date().getFullYear();
   // Scroll to top
   $("a[href='#top']").click(function () {
     $("html, body").animate(
