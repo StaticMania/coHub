@@ -1,0 +1,158 @@
+// Services Page Styles
+.services-hero {
+  padding: 250px 0 150px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+
+  @include desktop-lg {
+    padding: 150px 0 100px;
+  }
+
+  @include desktop {
+    padding: 200px 0 100px;
+  }
+
+  @include tablet {
+    padding: 150px 0 80px;
+  }
+
+  @include mobile {
+    padding: 120px 0 60px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      color: $white;
+      margin-bottom: 15px;
+      font-size: 50px;
+      line-height: 70px;
+
+      @include tablet {
+        font-size: 40px;
+        line-height: 55px;
+      }
+
+      @include mobile {
+        font-size: 30px;
+        line-height: 45px;
+      }
+
+      @include mobile-xs {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 19px;
+      line-height: 32px;
+      width: 83%;
+      margin: 0 auto;
+
+      @include desktop {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.services-overview {
+  padding: 100px 0;
+  background: $white;
+
+  @include desktop {
+    padding: 50px 0;
+  }
+
+  @include mobile {
+    padding: 30px 0;
+  }
+}
+
+.additional-services {
+  padding: 100px 0;
+  background: #f7f8fc;
+
+  @include desktop {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  &-content {
+    h2 {
+      margin-bottom: 40px;
+
+      @include mobile {
+        margin-bottom: 30px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 18px;
+        color: $text-color;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+
+        @include desktop {
+          justify-content: center;
+        }
+
+        i {
+          color: $primary-color;
+          margin-right: 15px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  &-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    @include desktop {
+      margin-top: 50px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// Ensure service items are same height
+.service-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

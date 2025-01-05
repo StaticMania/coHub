@@ -33,6 +33,85 @@
           color: $text-color-dark;
         }
       }
+      &.dropdown {
+        position: relative;
+      }
+      &.dropdown:hover .dropdown-menu,
+      &.dropdown .dropdown-menu:hover {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      &.dropdown {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        & > a {
+          position: relative;
+          padding-right: 16px !important;
+          &::after {
+            position: absolute;
+            right: 0;
+            font-family: "themify";
+            font-size: 10px;
+            transition: all 0.5s ease;
+            opacity: 1;
+            content: "\e64b"; /* Themify angle-down icon */
+            top: 12px;
+            transform: rotate(0deg);
+            transform-origin: center center;
+            transform-style: preserve-3d;
+            vertical-align: baseline;
+          }
+        }
+        &.rotate {
+          & > a {
+            &::after {
+              transform: rotate(180deg);
+              transform-origin: center center;
+              transform-style: preserve-3d;
+              vertical-align: baseline;
+            }
+          }
+        }
+        .dropdown-menu {
+          display: block;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(20px);
+          transition: all 0.3s ease-in-out;
+          border: none;
+          border-radius: 0;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+          padding: 15px 0;
+          margin: 0;
+          background: #fff;
+          &::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #fff;
+          }
+        }
+        .dropdown-item {
+          padding: 10px 25px;
+          color: #252525;
+          font-size: 14px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          &:hover {
+            background: #f8f9fa;
+            color: #007af5;
+            padding-left: 30px;
+          }
+        }
+      }
     }
 
     @include desktop {
@@ -150,4 +229,22 @@
     @extend .nav-bg;
     box-shadow: none;
   }
+}
+
+.main-nav.nav-bg .navbar-nav .nav-item.dropdown .dropdown-menu,
+.main-nav.main-nav-colored .navbar-nav .nav-item.dropdown .dropdown-menu {
+  margin-top: 0;
+}
+/* For colored navbar, make the chevrons white */
+.main-nav:not(.nav-bg):not(.main-nav-colored) .navbar-nav .nav-item.dropdown > a::before,
+.main-nav:not(.nav-bg):not(.main-nav-colored) .navbar-nav .nav-item.dropdown > a::after {
+  color: #fff;
+}
+
+/* Adjust chevron color for colored/scrolled navbar */
+.main-nav.nav-bg .navbar-nav .nav-item.dropdown > a::before,
+.main-nav.nav-bg .navbar-nav .nav-item.dropdown > a::after,
+.main-nav.main-nav-colored .navbar-nav .nav-item.dropdown > a::before,
+.main-nav.main-nav-colored .navbar-nav .nav-item.dropdown > a::after {
+  color: #252525;
 }

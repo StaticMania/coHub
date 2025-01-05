@@ -3,7 +3,12 @@ $(document).ready(function () {
   //Copyright Date
   var newYear = document.getElementById("newYear");
   newYear.innerHTML = new Date().getFullYear();
-  
+  // AOS initialize
+  AOS.init({
+    duration: 800,
+    once: true,
+    disable: "mobile",
+  });
   // Scroll to top
   $("a[href='#top']").click(function () {
     $("html, body").animate(
@@ -15,6 +20,81 @@ $(document).ready(function () {
     return false;
   });
 
+  // Remove bootstrap's default dropdown behavior
+  $(".nav-item.dropdown .dropdown-toggle").removeAttr("data-toggle");
+
+  // Remove default arrow from dropdown toggle
+  $(".nav-item.dropdown .dropdown-toggle").removeAttr("data-toggle").removeClass("dropdown-toggle");
+
+  let dropdownTimeout;
+
+  // Handle mouse enter on dropdown
+  $(".nav-item.dropdown").on("mouseenter", function () {
+    clearTimeout(dropdownTimeout);
+    $(this).addClass("rotate");
+    // Hide all other dropdowns
+    $(".nav-item.dropdown .dropdown-menu").css({
+      "opacity": "0",
+      "visibility": "hidden",
+      "transform": "translateY(20px)",
+    });
+
+    // Show current dropdown
+    $(this).find(".dropdown-menu").css({
+      "opacity": "1",
+      "visibility": "visible",
+      "transform": "translateY(0)",
+    });
+  });
+
+  // Handle mouse leave on dropdown
+  $(".nav-item.dropdown").on("mouseleave", function () {
+    $(this).removeClass("rotate");
+    const $dropdown = $(this);
+    dropdownTimeout = setTimeout(function () {
+      $dropdown.find(".dropdown-menu").css({
+        "opacity": "0",
+        "visibility": "hidden",
+        "transform": "translateY(20px)",
+      });
+    }, 150);
+  });
+
+  // Handle click on dropdown items for mobile
+  $(".navbar-toggler").on("click", function () {
+    $(".dropdown-menu").css({
+      "opacity": "0",
+      "visibility": "hidden",
+      "transform": "translateY(20px)",
+    });
+  });
+
+  // Handle dropdown toggle click on mobile
+  $(".nav-item.dropdown > a").on("click", function (e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      const $dropdown = $(this).parent().find(".dropdown-menu");
+      $(".dropdown-menu").not($dropdown).css({
+        "opacity": "0",
+        "visibility": "hidden",
+        "transform": "translateY(20px)",
+      });
+
+      if ($dropdown.css("visibility") === "visible") {
+        $dropdown.css({
+          "opacity": "0",
+          "visibility": "hidden",
+          "transform": "translateY(20px)",
+        });
+      } else {
+        $dropdown.css({
+          "opacity": "1",
+          "visibility": "visible",
+          "transform": "translateY(0)",
+        });
+      }
+    }
+  });
   // Smooth scroll
   $("a.scroll-to").on("click", function (event) {
     var $anchor = $(this);
@@ -30,11 +110,6 @@ $(document).ready(function () {
     if (screen.width < 992) {
       $(".navbar-toggler").click();
     }
-  });
-
-  // AOS initialize
-  AOS.init({
-    disable: "mobile",
   });
 
   // Service Item Match Height
@@ -167,4 +242,75 @@ $(window).on("scroll", function () {
   } else {
     $(".main-nav").removeClass("nav-bg");
   }
+});
+
+// community
+const counters = document.querySelectorAll(".counter");
+const speed = 200;
+
+const animateCounter = (counter) => {
+  const target = parseInt(counter.getAttribute("data-target"));
+  let count = 0;
+  const inc = target / speed;
+
+  const updateCount = () => {
+    if (count < target) {
+      count = Math.ceil(count + inc);
+      counter.innerText = count;
+      setTimeout(updateCount, 1);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  updateCount();
+};
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {threshold: 0.5}
+);
+
+counters.forEach((counter) => observer.observe(counter));
+
+/* JavaScript for Success Story Slider Initialization */
+$(".success-slider").slick({
+  dots: true,
+  infinite: true,
+  arrows: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  fade: true,
+  cssEase: "linear",
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+      },
+    },
+  ],
+});
+
+// Initialize Spaces Slider
+$(".spaces-slider").slick({
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  arrows: false,
 });
